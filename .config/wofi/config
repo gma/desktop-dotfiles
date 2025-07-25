@@ -1,0 +1,11 @@
+style=/home/graham/.config/wofi/style.css
+
+show=drun
+
+allow_images=false
+image_size=24
+
+insensitive=true
+prompt=
+term=kitty
+use_search_box=false
