@@ -76,8 +76,7 @@ button:hover {
 }
 
 #clock {
-    color: @maroon;
-    border-bottom: 2px solid @maroon;
+    color: @subtext0;
 }
 
 #clock.date {
