@@ -54,7 +54,7 @@ button:hover {
     background-color: #eb4d4b;
 }
 
-#pulseaudio,
+#wireplumber,
 #clock,
 #battery,
 #cpu,
@@ -84,7 +84,7 @@ button:hover {
     border-bottom: 2px solid @mauve;
 }
 
-#pulseaudio {
+#wireplumber {
     color: @blue;
     border-bottom: 2px solid @blue;
 }
