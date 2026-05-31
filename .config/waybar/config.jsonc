@@ -23,7 +23,7 @@
     "tooltip-format": "{time}"
   },
   "network": {
-    "format-wifi": "    {essid}",
+    "format-wifi": "    {essid}: {signalStrength}%",
     "format-ethernet": "   {ifname}",
     "format-linked": "   {ifname} (No IP)",
     "format-disconnected": "  Disconnected",
