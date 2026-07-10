@@ -12,13 +12,13 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon}  {capacity}%",
+    "format": "{icon}   {capacity}%",
     "format-warning": "{icon}  {capacity}%",
     "format-critical": "{icon}  {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
     "format-alt": "{icon}  {time}",
-    "format-full": " {capacity}%",
+    "format-full": "  {capacity}%",
     "format-icons": ["", "", "", "", ""],
     "tooltip-format": "{time}"
   },
