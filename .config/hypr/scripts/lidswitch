@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+MONITOR="eDP-1"
+ON="preferred, auto, 1"
+OFF="disable"
+
+
+turn_screen()
+{
+    hyprctl keyword monitor "$MONITOR, $1"
+}
+
+
+STATE="$1"
+
+case "$STATE" in
+    "on")
+        if [ "$(acpi -a)" = "Adapter 0: on-line" ]; then
+            turn_screen "$OFF"
+        fi
+        ;;
+    "off")
+        turn_screen "$ON"
+        ;;
+esac
