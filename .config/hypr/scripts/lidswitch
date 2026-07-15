@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 MONITOR="eDP-1"
-ON="preferred, auto, 1"
+ON="preferred, auto-left, 1"
 OFF="disable"
 
 
