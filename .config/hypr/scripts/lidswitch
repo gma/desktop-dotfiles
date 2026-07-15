@@ -11,15 +11,24 @@ turn_screen()
 }
 
 
+restart_waybar()
+{
+    pkill -f waybar
+    waybar >/dev/null 2>&1 &
+}
+
+
 STATE="$1"
 
 case "$STATE" in
     "on")
         if [ "$(acpi -a)" = "Adapter 0: on-line" ]; then
             turn_screen "$OFF"
+            restart_waybar
         fi
         ;;
     "off")
         turn_screen "$ON"
+        restart_waybar
         ;;
 esac
