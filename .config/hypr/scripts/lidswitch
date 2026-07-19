@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 MONITOR="eDP-1"
-ON="preferred, auto-left, 1"
-OFF="disable"
+ON="disabled = false"
+OFF="disabled = true"
 
 
 turn_screen()
 {
-    hyprctl keyword monitor "$MONITOR, $1"
+    hyprctl eval "hl.monitor({ output = '$MONITOR', $1 })"
 }
 
 
