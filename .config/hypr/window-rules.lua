@@ -43,7 +43,11 @@ hl.window_rule({
 })
 
 -- Firefox
-for _, title in ipairs({ "Picture-in-Picture", "Library" }) do
+for _, title in ipairs({
+  "Downloading Certificate",
+  "Library",
+  "Picture-in-Picture",
+}) do
   hl.window_rule({
     match = { class = "firefox", title = title },
     float = true,
