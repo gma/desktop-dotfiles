@@ -30,6 +30,14 @@ hl.window_rule({
 -- App-specific rules
 --
 
+-- windowrule = center on, float on, size (monitor_w*0.8) (monitor_h*0.9), match:title btop
+hl.window_rule({
+  match = { title = "^(btop)$" },
+  center = true,
+  float = true,
+  size = { 1200, 900 },
+})
+
 -- Prevent new mail from bringing hidden terminal running mutt to the front
 hl.window_rule({
   match = { class = "^(kitty)$" },
