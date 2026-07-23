@@ -11,6 +11,7 @@ require("input-devices")
 require("autostart")
 
 require("bindings.launchers")
+require("bindings.layouts")
 require("bindings.media")
 require("bindings.utilities")
 require("bindings.windows")
