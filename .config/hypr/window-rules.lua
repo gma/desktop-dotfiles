@@ -99,6 +99,12 @@ hl.window_rule({
   workspace = "special:notes",
 })
 
+-- Media
+hl.window_rule({
+  match = { class = "^(vlc)$" },
+  float = true,
+})
+
 -- Messaging apps
 for _, class in ipairs({
   "discord",
