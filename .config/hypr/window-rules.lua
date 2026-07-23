@@ -109,7 +109,8 @@ for _, class in ipairs({
 }) do
   hl.window_rule({
     match = { class = "^(" .. class .. ")$" },
-    size = { "(monitor_w*0.66)", "(monitor_h*0.95)" },
+    size = { "(monitor_w*0.66)", "(monitor_h*0.9)" },
+    pseudo = true,
     workspace = "special:comms",
   })
 end

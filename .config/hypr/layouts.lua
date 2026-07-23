@@ -7,4 +7,12 @@ hl.config({
   master = {
     new_status = "master",
   },
+
+  scrolling = {
+    focus_fit_method = 0,
+    column_width = 0.6,
+  },
 })
+
+-- Workspace-specific layouts
+hl.workspace_rule({ workspace = "special:comms", layout = "scrolling" })
