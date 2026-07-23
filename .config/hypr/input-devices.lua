@@ -42,19 +42,19 @@ hl.device({
   sensitivity = 0.3,
 })
 
-hl.device = {
+hl.device({
   name = "kensington-usb/ps2-orbit",
   sensitivity = -0.3,
-  middle_button_emulation = 1,
-}
+  middle_button_emulation = true,
+})
 
-hl.device = {
+hl.device({
   name = "mosart-semi.-orbit-wireless-mobile-trackball",
   sensitivity = -0.3,
-  middle_button_emulation = 1,
-}
+  middle_button_emulation = true,
+})
 
-hl.device = {
+hl.device({
   name = "ploopy-corporation-ploopy-adept-trackball-mouse",
   sensitivity = -0.8,
-}
+})
