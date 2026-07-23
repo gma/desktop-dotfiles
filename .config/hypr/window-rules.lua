@@ -104,7 +104,8 @@ for _, class in ipairs({
   "discord",
   "com.fastmail.Fastmail",
   "com.mattermost.Desktop",
-  "com.slack.Slack"
+  "com.slack.Slack",
+  "org.signal.Signal",
 }) do
   hl.window_rule({
     match = { class = "^(" .. class .. ")$" },
