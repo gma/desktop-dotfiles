@@ -1,5 +1,5 @@
 hl.bind("SUPER + CTRL + M", function ()
-  local layouts     = { "dwindle", "monocle" }
+  local layouts     = { "dwindle", "monocle", "scrolling" }
   local workspace   = hl.get_active_workspace()
   if hl.get_active_special_workspace() then
     workspace = hl.get_active_special_workspace()
