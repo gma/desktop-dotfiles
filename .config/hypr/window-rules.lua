@@ -50,6 +50,16 @@ hl.window_rule({
   move = { "(cursor_x-(window_w*0.5))", "(cursor_y-(window_h*0.5))" },
 })
 
+hl.on("window.open", function(win)
+  if win ~= nil and win.title:match("^Enpass Assistant$") then
+    hl.timer(function()
+      local cx = math.floor(win.at["x"] + win.size["x"] / 2)
+      local cy = math.floor(win.at["y"] + win.size["y"] / 2)
+      hl.dispatch(hl.dsp.cursor.move({ x = cx, y = cy }))
+    end, { timeout = 10, type = "oneshot" })
+  end
+end)
+
 -- Firefox
 for _, title in ipairs({
   "Downloading Certificate",
