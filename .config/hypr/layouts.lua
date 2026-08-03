@@ -16,3 +16,5 @@ hl.config({
 
 -- Workspace-specific layouts
 hl.workspace_rule({ workspace = "special:comms", layout = "scrolling" })
+hl.workspace_rule({ workspace = "special:docs", layout = "scrolling" })
+hl.workspace_rule({ workspace = "special:scratch", layout = "scrolling" })
