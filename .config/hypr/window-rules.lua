@@ -103,7 +103,7 @@ hl.window_rule({
 
 -- Obsidian
 hl.window_rule({
-  match = { class = "obsidian" },
+  match = { class = "md.Obsidian" },
   size = { "(monitor_w*0.5)", "(monitor_h*0.9)" },
   pseudo = true,
   workspace = "special:notes",
