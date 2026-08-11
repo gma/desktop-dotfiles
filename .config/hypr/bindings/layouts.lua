@@ -20,4 +20,9 @@ hl.bind("SUPER + CTRL + M", function ()
     workspace = tostring(workspace.special and workspace.name or workspace.id),
     layout = next_layout
   })
+
+  local pseudo_state = (next_layout == "monocle") and "enable" or "disable"
+  hl.timer(function()
+    hl.dispatch(hl.dsp.window.pseudo({ action = pseudo_state }))
+  end, { timeout = 5, type = "oneshot" })
 end)
