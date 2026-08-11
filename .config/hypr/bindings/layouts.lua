@@ -21,8 +21,7 @@ hl.bind("SUPER + CTRL + M", function ()
     layout = next_layout
   })
 
-  local pseudo_state = (next_layout == "monocle") and "enable" or "disable"
-  hl.timer(function()
-    hl.dispatch(hl.dsp.window.pseudo({ action = pseudo_state }))
-  end, { timeout = 5, type = "oneshot" })
+  hl.dispatch(hl.dsp.window.pseudo({
+    action = (next_layout == "monocle") and "enable" or "disable"
+  }))
 end)
