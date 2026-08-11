@@ -1,13 +1,10 @@
 hl.bind("SUPER + CTRL + M", function ()
-  local layouts     = { "dwindle", "monocle", "scrolling" }
-  local workspace   = hl.get_active_workspace()
-  if hl.get_active_special_workspace() then
-    workspace = hl.get_active_special_workspace()
-  end
+  local layouts = { "dwindle", "monocle", "scrolling" }
+  local workspace = (
+    hl.get_active_special_workspace() or hl.get_active_workspace()
+  )
 
-  if not workspace then
-    return
-  end
+  if not workspace then return end
 
   local next_layout = "dwindle"
 
@@ -19,11 +16,10 @@ hl.bind("SUPER + CTRL + M", function ()
     end
   end
 
-  if workspace.special then
-    hl.workspace_rule({ workspace = tostring(workspace.name), layout = next_layout })
-  else
-    hl.workspace_rule({ workspace = tostring(workspace.id), layout = next_layout })
-  end
+  hl.workspace_rule({
+    workspace = tostring(workspace.special and workspace.name or workspace.id),
+    layout = next_layout
+  })
 
   hl.dispatch(hl.dsp.window.pseudo())
 end)
