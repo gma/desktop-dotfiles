@@ -20,6 +20,4 @@ hl.bind("SUPER + CTRL + M", function ()
     workspace = tostring(workspace.special and workspace.name or workspace.id),
     layout = next_layout
   })
-
-  hl.dispatch(hl.dsp.window.pseudo())
 end)
