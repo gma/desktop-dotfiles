@@ -22,7 +22,7 @@ local function set_active_border(workspace, layout)
 end
 
 hl.bind("SUPER + CTRL + M", function ()
-  local layouts = { "dwindle", "monocle", "scrolling" }
+  local layouts = { "dwindle", "scrolling", "monocle" }
   local workspace = (
     hl.get_active_special_workspace() or hl.get_active_workspace()
   )
