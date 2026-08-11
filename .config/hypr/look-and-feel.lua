@@ -1,4 +1,4 @@
-local colours = require("mocha")
+local theme = require("mocha")
 
 hl.config({
   misc = {
@@ -19,8 +19,8 @@ hl.config({
     resize_on_border = false,
 
     col = {
-      active_border = colours["rosewaterAlphacc"],
-      inactive_border = colours["crust"],
+      active_border = theme.colour("rosewater"),
+      inactive_border = theme.colour("crust"),
     },
 
     allow_tearing = false,
