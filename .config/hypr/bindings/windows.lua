@@ -24,13 +24,52 @@ resize_active("SUPER + SHIFT + l", resize_step, 0)
 local directions = { h = "l", j = "d", k = "u", l = "r" }
 local arrows = { h = "Left", j = "Down", k = "Up", l = "Right" }
 
+local function layout_bind(bind_table)
+  return function ()
+    local workspace = hl.get_active_special_workspace() or
+    hl.get_active_workspace()
+    if not workspace then return end
+
+    local layout = workspace.tiled_layout
+
+    if bind_table[layout] then
+      hl.dispatch(bind_table[layout])
+    end
+  end
+end
+
+local function is_previous(key)
+  for _, value in ipairs({ "h", "k", "Left", "Up" }) do
+    if key == value then return true end
+  end
+  return false
+end
+
+-- Focusing, swapping, and moving windows
 for key, dir in pairs(directions) do
-  hl.bind("SUPER + " .. key, hl.dsp.focus({ direction = dir }))
-  hl.bind("SUPER + " .. arrows[key], hl.dsp.focus({ direction = dir }))
+  local cycler = is_previous(key) and "cycleprev" or "cyclenext"
+  local focus_binds = {
+    dwindle = hl.dsp.focus({ direction = dir }),
+    scrolling = hl.dsp.focus({ direction = dir }),
+    master = hl.dsp.focus({ direction = dir }),
+    monocle = hl.dsp.layout(cycler),
+  }
+  hl.bind("SUPER + " .. key, layout_bind(focus_binds))
+  hl.bind("SUPER + " .. arrows[key], layout_bind(focus_binds))
 
-  hl.bind("SUPER + CTRL + " .. key, hl.dsp.window.swap({ direction = dir }))
+  local swap_binds = {
+    dwindle = hl.dsp.window.swap({ direction = dir }),
+    master = hl.dsp.window.swap({ direction = dir }),
+    scrolling = hl.dsp.window.swap({ direction = dir }),
+  }
+  hl.bind("SUPER + CTRL + " .. key, layout_bind(swap_binds))
 
-  hl.bind("SUPER + CTRL + SHIFT + " .. key, hl.dsp.window.move({ direction = dir }))
+  local move_binds = {
+    dwindle = hl.dsp.window.move({ direction = dir }),
+    master = hl.dsp.window.move({ direction = dir }),
+    scrolling = hl.dsp.window.move({ direction = dir }),
+  }
+  hl.bind("SUPER + CTRL + SHIFT + " .. key, layout_bind(move_binds))
 end
 
 -- Move/resize windows with mouse
