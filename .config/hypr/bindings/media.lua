@@ -35,4 +35,4 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 local play_pause = hl.dsp.exec_cmd("playerctl play-pause")
 hl.bind("XF86AudioPause", play_pause, { locked = true })
 hl.bind("XF86AudioPlay", play_pause, { locked = true })
-hl.bind( "XF86Favorites", play_pause, { locked = true })
+hl.bind("XF86Favorites", play_pause, { locked = true })
