@@ -21,14 +21,8 @@ local function set_active_border(workspace, layout)
   })
 end
 
-hl.bind("SUPER + CTRL + M", function ()
+local function get_next_layout(workspace)
   local layouts = { "dwindle", "scrolling", "monocle" }
-  local workspace = (
-    hl.get_active_special_workspace() or hl.get_active_workspace()
-  )
-
-  if not workspace then return end
-
   local next_layout = "dwindle"
 
   for i = 1, #layouts do
@@ -38,6 +32,17 @@ hl.bind("SUPER + CTRL + M", function ()
       break
     end
   end
+
+  return next_layout
+end
+
+hl.bind("SUPER + CTRL + M", function ()
+  local workspace = (
+    hl.get_active_special_workspace() or hl.get_active_workspace()
+  )
+  if not workspace then return end
+
+  local next_layout = get_next_layout(workspace)
 
   hl.workspace_rule({
     workspace = workspace_selector(workspace),
