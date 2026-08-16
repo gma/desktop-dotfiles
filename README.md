@@ -22,6 +22,6 @@ how to refer to the keys on your keyboard. Look through the constants defined
 in the [xkbcommon project]'s [xkbcommon-keysyms.h] header file, remove the
 leading "XKB_KEY_" prefix, and use what's left in your config file.
 
-[binds]: https://wiki.hypr.land/Configuring/Binds/
+[binds]: https://wiki.hypr.land/Configuring/Basics/Binds/
 [xkbcommon project]: https://xkbcommon.org/
 [xkbcommon-keysyms.h]: https://github.com/xkbcommon/libxkbcommon/blob/master/include/xkbcommon/xkbcommon-keysyms.h
