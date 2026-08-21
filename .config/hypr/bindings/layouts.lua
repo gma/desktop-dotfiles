@@ -51,9 +51,10 @@ hl.bind("SUPER + CTRL + M", function ()
 
   set_active_border(workspace, next_layout)
 
-  hl.dispatch(hl.dsp.window.pseudo({
-    action = (next_layout == "monocle") and "enable" or "disable"
-  }))
+  for _, window in ipairs(hl.get_workspace_windows(workspace)) do
+    local action = (next_layout == "dwindle") and "disable" or "enable"
+    hl.dispatch(hl.dsp.window.pseudo({ action = action, window = window }))
+  end
 end)
 
 -- Set active window border on workspaces created at startup
