@@ -2,7 +2,8 @@
 hl.bind("SUPER + Escape", hl.dsp.exec_cmd("loginctl lock-session"))
 hl.bind(
   "SUPER + CTRL + Escape",
-  hl.dsp.exec_cmd("(sleep 1; systemctl suspend) & loginctl lock-session")
+  hl.dsp.exec_cmd("(sleep 1; systemctl suspend) & loginctl lock-session"),
+  { locked = true }
 )
 hl.bind("SUPER + CTRL + SHIFT + Escape", hl.dsp.exit())
 
