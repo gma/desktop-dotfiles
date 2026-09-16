@@ -1,10 +1,31 @@
+local function get_volume()
+  local handle = io.popen("wpctl get-volume @DEFAULT_AUDIO_SINK@")
+  if not handle then
+    return nil
+  end
+  local output = handle:read("*a")
+  handle:close()
+  local frac = tonumber(output:match("(%d+%.%d+)"))
+  if not frac then
+    return nil
+  end
+  return math.floor(frac * 100 + 0.5)
+end
+
+local volume = get_volume()
+local step = (volume and volume % 2 == 1) and 3 or 2
+
 hl.bind("XF86AudioRaiseVolume",
-  hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 2%+"),
+  hl.dsp.exec_cmd(
+    string.format("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ %d%%+", step)
+  ),
   { locked = true, repeating = true }
 )
 hl.bind(
   "XF86AudioLowerVolume",
-  hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"),
+  hl.dsp.exec_cmd(
+    string.format("wpctl set-volume @DEFAULT_AUDIO_SINK@ %d%%-", step)
+  ),
   { locked = true, repeating = true }
 )
 hl.bind(
