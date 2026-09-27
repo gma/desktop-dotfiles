@@ -44,6 +44,18 @@ hl.window_rule({
   suppress_event = "activatefocus",
 })
 
+-- darktable
+for _, title in ipairs({
+  "Are you sure\\?",
+  "Error starting Darktable",
+  "Done",
+}) do
+  hl.window_rule({
+    match = { class = "org.darktable.darktable", title = title },
+    float = true,
+  })
+end
+
 -- Enpass
 hl.window_rule({
   match = { title = "Enpass Assistant" },
