@@ -131,7 +131,8 @@ hl.window_rule({
 
 -- Media
 hl.window_rule({
-  match = { class = "^(vlc)$" },
+  match = { class = "^(mpv)$" },
+  center = true,
   float = true,
 })
 
