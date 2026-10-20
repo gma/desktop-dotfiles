@@ -96,11 +96,11 @@ end
 
 -- GNOME Pomodoro
 hl.window_rule({
-  match = { class = "gnome-pomodoro" },
+  match = { class = "io.github.focustimerhq.FocusTimer" },
   workspace = "special:scratch",
 })
 hl.window_rule({
-  match = { class = "gnome-pomodoro", title = "Preferences" },
+  match = { class = "io.github.focustimerhq.FocusTimer", title = "Preferences" },
   float = true,
   persistent_size = true,
 })
