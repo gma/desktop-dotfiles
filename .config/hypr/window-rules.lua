@@ -129,6 +129,13 @@ hl.window_rule({
   float = true,
 })
 
+hl.window_rule({
+  match = { class = "md.obsidian.Obsidian", title = "^Community plugins .*" },
+  workspace = "special:notes",
+  center = true,
+  float = true,
+})
+
 -- Media
 hl.window_rule({
   match = { class = "^(mpv)$" },
