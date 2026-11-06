@@ -4,7 +4,6 @@ end
 
 hl.on("hyprland.start", function()
   launch("hypridle")
-  launch("hyprpaper")
   launch("swaync")
   launch("waybar")
 end)
