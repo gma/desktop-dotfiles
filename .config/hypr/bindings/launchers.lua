@@ -12,7 +12,7 @@ local terminal = "kitty"
 hl.bind("SUPER + backslash", launch(terminal))
 hl.bind("SUPER + T", launch(terminal .. " -o font_size=12 --title btop btop"))
 
-hl.bind("SUPER + F", launch("nautilus"))
+hl.bind("SUPER + F", launch("nautilus -w"))
 hl.bind("SUPER + W", launch("firefox"))
 
 hl.bind("SUPER + E", launch("enpass"))
